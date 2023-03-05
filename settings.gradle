@@ -1,0 +1,5 @@
+rootProject.name="study-springboot"
+
+file("${rootDir}/security/oauth").eachDir {
+    include "security:oauth:${it.name}"
+}
