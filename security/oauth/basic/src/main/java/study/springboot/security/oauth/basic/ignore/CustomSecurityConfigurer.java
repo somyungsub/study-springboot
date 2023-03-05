@@ -1,4 +1,4 @@
-package study.springboot.security.oauth.basic.config;
+package study.springboot.security.oauth.basic.ignore;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;

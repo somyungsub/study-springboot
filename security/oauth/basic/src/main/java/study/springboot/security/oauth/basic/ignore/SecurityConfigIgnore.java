@@ -1,20 +1,26 @@
-package study.springboot.security.oauth.basic.config;
+package study.springboot.security.oauth.basic.ignore;
 
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
-public class SecurityConfigPrototype {
+public class SecurityConfigIgnore {
 
-  /*
+//  @Override
+//  public void init(SecurityBuilder builder) throws Exception {
+//
+//  }
+//
+//  @Override
+//  public void configure(SecurityBuilder builder) throws Exception {
+//
+//  }
 
-   */
   @Bean
-  SecurityFilterChain securityFilterChainPrototype(HttpSecurity httpSecurity) throws Exception {
+  SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
     httpSecurity.authorizeHttpRequests().anyRequest().authenticated();
     httpSecurity.formLogin();
 
@@ -26,10 +32,9 @@ public class SecurityConfigPrototype {
   }
 
   @Bean
-  SecurityFilterChain securityFilterChainPrototype2(HttpSecurity httpSecurity) throws Exception {
+  SecurityFilterChain defaultSecurityFilter(HttpSecurity httpSecurity) throws Exception {
     httpSecurity.authorizeHttpRequests().anyRequest().authenticated();
     httpSecurity.formLogin();
     return httpSecurity.build();
-
   }
 }
