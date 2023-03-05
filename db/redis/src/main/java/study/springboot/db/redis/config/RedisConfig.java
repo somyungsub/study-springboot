@@ -1,15 +1,13 @@
 package study.springboot.db.redis.config;
 
 import lombok.Getter;
-import lombok.Setter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 @Getter
-@Setter
-@Configuration
+@RequiredArgsConstructor
 @ConfigurationProperties(prefix = "spring.data.redis")
 public class RedisConfig {
-  private String host;
-  private int port;
+  private final String host;
+  private final int port;
 }
