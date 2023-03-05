@@ -1,5 +1,16 @@
 rootProject.name="study-springboot"
 
+include 'db'
+include 'security'
+
+file("${rootDir}/security").eachDir {
+    include "security:${it.name}"
+}
+
 file("${rootDir}/security/oauth").eachDir {
     include "security:oauth:${it.name}"
+}
+
+file("${rootDir}/db").eachDir {
+    include "db:${it.name}"
 }
